@@ -1,3 +1,5 @@
+package model;
+
 public class Pessoa {
     private final String nome;
     private final String curso;
