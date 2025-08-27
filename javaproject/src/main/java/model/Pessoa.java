@@ -2,7 +2,7 @@ package model;
 
 public class Pessoa {
     private final String nome;
-    private final String curso;
+    protected final String curso;
     private final String campus;
     private final double nota;
     private final String tipoVaga;
@@ -39,5 +39,10 @@ public class Pessoa {
 
     public int getPosicao() {
         return posicao;
+    }
+
+    @Override
+    public String toString() {
+        return nome + " passou em " + curso;
     }
 }
