@@ -27,6 +27,10 @@ public class Curso {
         return campus;
     }
 
+    public String getTurno() {
+        return turno;
+    }
+
     public String[] definirCurso(String crs) {
 
         String[] resultado = new String[3];
