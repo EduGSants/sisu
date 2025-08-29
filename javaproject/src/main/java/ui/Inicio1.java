@@ -166,6 +166,7 @@ public class Inicio1 extends javax.swing.JFrame {
         } else {
             listaCursos.sort(Comparator.comparing(Curso::toString));
         }
+        Estatisticas.setCursos(listaCursos);
     }
     
     private void atualizarEstatisticasGerais() {
