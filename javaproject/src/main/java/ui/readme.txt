@@ -1,1 +1,1 @@
-Aqui é onde vai trabalhar o javaFX
+mudamos para Swing, e é aqui onde o bixão vai trabalhar
