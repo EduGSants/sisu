@@ -7,9 +7,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.Collections;
 
 public class estatisticas {
-    public static List<BigDecimal> medias(List<Curso> cursos) {
+    static List<BigDecimal> variacao = new ArrayList<BigDecimal>();
+    public static List<Curso> cursos = new ArrayList<Curso>();
+    public static List<BigDecimal> medias() {
         // O último elemento do arraylist será a média geral!!!!
         List<Double> x = new ArrayList<Double>();
         for(Curso c : cursos) {
@@ -34,7 +37,7 @@ public class estatisticas {
         return y;
     }
 
-    public static List<BigDecimal> turnos(List<Curso> cursos) {
+    public static List<BigDecimal> turnos() {
         String[] turnos = { "MATUTINO", "VESPERTINO", "NOTURNO", "INTEGRAL" };
 
         // Permanece na ordem acima a lista
@@ -67,7 +70,7 @@ public class estatisticas {
     }
 
 
-    public static List<BigDecimal> demandas(List<Curso> cursos) {
+    public static List<BigDecimal> demandas() {
         String[] categorias = {
             "AC", "LB_PPI", "LB_Q", "LB_PCD", "LB_EP",
             "LI_PPI", "LI_Q", "LI_PCD", "LI_EP", "V"
@@ -100,7 +103,7 @@ public class estatisticas {
         return x;
     }
 
-    public static List<BigDecimal> campi(List<Curso> cursos) {
+    public static List<BigDecimal> campi() {
         String[] categorias = {
             "SAO CRISTOVAO", "ARACAJU", "ITABAIANA", "CAMPUS DO SERTAO"
             , "LARANJEIRAS"
@@ -131,5 +134,34 @@ public class estatisticas {
         }
 
         return x;
+    }
+
+    public static List<Double> mySort(Curso x) {
+        List<Double> notas = new ArrayList<Double>();
+        for(Pessoa p : x.candidatos) {
+            notas.add(p.getNota());
+        }
+        Collections.sort(notas);
+        return notas;
+    }
+
+    public static List<BigDecimal> delta() {
+        for(Curso c : cursos) {
+            List<Double> a = mySort(c);
+            variacao.add(BigDecimal.valueOf(a.get(a.size() - 1) - a.get(0)).setScale(1, RoundingMode.HALF_EVEN));
+        }
+        return variacao;
+    }
+
+    public static BigDecimal deltaEspecifico(Curso c) {
+        delta();
+        int i = 0;
+        for(Curso p : cursos) {
+            if (p.equals(c)) {
+                return variacao.get(i);
+            }
+            i++;
+        }
+        return new BigDecimal(0.0);
     }
 }

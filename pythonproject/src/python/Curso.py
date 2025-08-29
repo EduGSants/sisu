@@ -1,4 +1,4 @@
-from python import Pessoa
+from python.Pessoa import Pessoa
 from typing import List
 
 class Curso:

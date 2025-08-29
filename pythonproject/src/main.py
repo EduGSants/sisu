@@ -1,13 +1,12 @@
-from python import Leitura
+from python.Leitura import Leitura
+from python.estatisticas import estatisticas
 
 def main():
-    cursos = Leitura.addvariaveis("entrada")
-    for s in cursos:
-        print(f"Curso: {s}, Campus: {s.getCampus()}")
+    cursos = Leitura.addvariaveis("/workspaces/sisu/pythonproject/src/docs/dados.csv")
 # Apenas para testes
-    for s in cursos:
-        for p in s.candidatos:
-            print(f"{p.getNome()}")
+    result = estatisticas.deltaEsp(cursos,cursos[4])
+
+    print(f"{result}")
 
 if __name__ == "__main__":
     main()

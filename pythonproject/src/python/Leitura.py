@@ -1,6 +1,6 @@
 from typing import List
-from python import Pessoa
-from python import Curso
+from python.Pessoa import Pessoa
+from python.Curso import Curso
 
 class Leitura:
     @staticmethod
@@ -20,7 +20,15 @@ class Leitura:
                         cursos.append(curso)
                     else:
                         curso = cursos[cursos.index(curso)]
-                    a = Pessoa(parts[0],curso.getNomeCurso, curso.getCampus, float(parts[4]), parts[3], int(parts[5]))
+                    a = Pessoa(
+                        parts[0],
+                        curso.getNomeCurso(),
+                        curso.getCampus(),  
+                        parts[3],
+                        float(parts[4]),
+                        int(parts[5])
+                    )
+
                     curso.candidatos.append(a)
                     pessoas.append(a)
         except Exception as e:
