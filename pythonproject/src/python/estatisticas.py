@@ -1,11 +1,10 @@
-from decimal import Decimal, ROUND_HALF_EVEN
 from typing import List
 from python.Curso import Curso
 
 class estatisticas:
 
     @staticmethod
-    def medias(cursos: List[Curso]) -> List[Decimal]:
+    def medias(cursos: List[Curso]) -> List[float]:
         medias_cursos = []
 
         for c in cursos:
@@ -20,11 +19,10 @@ class estatisticas:
         media_geral = sum(medias_cursos) / len(medias_cursos) if medias_cursos else 0.0
         medias_cursos.append(media_geral)
 
-        # Converter para Decimal com 1 casa decimal
-        return [Decimal(n).quantize(Decimal("0.0"), rounding=ROUND_HALF_EVEN) for n in medias_cursos]
+        return medias_cursos
 
     @staticmethod
-    def turnos(cursos: List[Curso]) -> List[Decimal]:
+    def turnos(cursos: List[Curso]) -> List[float]:
         turnos = ["MATUTINO", "VESPERTINO", "NOTURNO", "INTEGRAL"]
         contagem = {t: 0 for t in turnos}
         total_candidatos = 0
@@ -37,13 +35,13 @@ class estatisticas:
             total_candidatos += qtd
 
         return [
-            Decimal((contagem[t] * 100) / total_candidatos).quantize(Decimal("0.0"), rounding=ROUND_HALF_EVEN)
-            if total_candidatos > 0 else Decimal("0.0")
+            float((contagem[t] * 100) / total_candidatos)
+            if total_candidatos > 0 else float("0.0")
             for t in turnos
         ]
 
     @staticmethod
-    def demandas(cursos: List[Curso]) -> List[Decimal]:
+    def demandas(cursos: List[Curso]) -> List[float]:
         categorias = [
             "AC", "LB_PPI", "LB_Q", "LB_PCD", "LB_EP",
             "LI_PPI", "LI_Q", "LI_PCD", "LI_EP", "V"
@@ -59,13 +57,13 @@ class estatisticas:
                 total_pessoas += 1
 
         return [
-            Decimal((contagem[cat] * 100) / total_pessoas).quantize(Decimal("0.0"), rounding=ROUND_HALF_EVEN)
-            if total_pessoas > 0 else Decimal("0.0")
+            float((contagem[cat] * 100) / total_pessoas)
+            if total_pessoas > 0 else float("0.0")
             for cat in categorias
         ]
 
     @staticmethod
-    def campi(cursos: List[Curso]) -> List[Decimal]:
+    def campi(cursos: List[Curso]) -> List[float]:
         categorias = ["SAO CRISTOVAO", "ARACAJU", "ITABAIANA", "CAMPUS DO SERTAO", "LARANJEIRAS"]
         contagem = {cat: 0 for cat in categorias}
         total_pessoas = 0
@@ -78,26 +76,24 @@ class estatisticas:
                 total_pessoas += 1
 
         return [
-            Decimal((contagem[cat] * 100) / total_pessoas).quantize(Decimal("0.0"), rounding=ROUND_HALF_EVEN)
-            if total_pessoas > 0 else Decimal("0.0")
+            float((contagem[cat] * 100) / total_pessoas)
+            if total_pessoas > 0 else float("0.0")
             for cat in categorias
         ]
     
     @staticmethod
-    def delta(cursos: List[Curso]) -> List[Decimal]:
+    def delta(cursos: List[Curso]) -> List[float]:
         variacoes = []
         for c in cursos:
             if c.candidatos:
-                maior = max(Decimal(a.getNota()) for a in c.candidatos)
-                menor = min(Decimal(a.getNota()) for a in c.candidatos)
-                diferenca = maior - menor
-                arredondado = diferenca.quantize(Decimal("0.0"), rounding=ROUND_HALF_EVEN)
-                variacoes.append(arredondado)
+                maior = max(float(a.getNota()) for a in c.candidatos)
+                menor = min(float(a.getNota()) for a in c.candidatos)
+                variacoes.append(maior - menor)
 
         return variacoes
 
     @staticmethod
-    def deltaEsp(cursos: List[Curso], c: Curso) -> Decimal:
+    def deltaEsp(cursos: List[Curso], c: Curso) -> float:
         variacoes = estatisticas.delta(cursos)
         i = 0
         for m in cursos:
