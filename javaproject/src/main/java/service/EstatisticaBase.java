@@ -28,7 +28,7 @@ public abstract class EstatisticaBase {
         int total = 0;
 
         for (Curso curso : cursos) {
-            for (Pessoa pessoa : curso.candidatos) {
+            for (Pessoa pessoa : curso.getCandidatos()) {
                 String valor = extrator.extrair(pessoa);
                 if (contagem.containsKey(valor)) {
                     contagem.put(valor, contagem.get(valor) + 1);

@@ -12,10 +12,10 @@ public class EstatisticaMedias extends EstatisticaBase {
         
         for(Curso curso : cursos) {
             Double notaTotal = 0.0;
-            for(Pessoa candidato : curso.candidatos) {
+            for(Pessoa candidato : curso.getCandidatos()) {
                 notaTotal += candidato.getNota();
             }
-            Double mediaCurso = notaTotal / curso.candidatos.size();
+            Double mediaCurso = notaTotal / curso.getCandidatos().size();
             medias.add(mediaCurso);
             mediaGeral += mediaCurso;
         }

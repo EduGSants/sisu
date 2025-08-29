@@ -10,7 +10,7 @@ public class EstatisticaTurnos extends EstatisticaBase {
     public List<Double> calcular() {
         return calcularPorcentagens(TURNOS, pessoa -> {
             for (Curso curso : cursos) {
-                if (curso.candidatos.contains(pessoa)) {
+                if (curso.getCandidatos().contains(pessoa)) {
                     return curso.getTurno();
                 }
             }

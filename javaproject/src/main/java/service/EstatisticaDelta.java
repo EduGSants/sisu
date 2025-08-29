@@ -18,7 +18,7 @@ public class EstatisticaDelta extends EstatisticaBase {
     
     private List<Double> ordenarNotas(Curso curso) {
         List<Double> notas = new ArrayList<>();
-        for(Pessoa candidato : curso.candidatos) {
+        for(Pessoa candidato : curso.getCandidatos()) {
             notas.add(candidato.getNota());
         }
         Collections.sort(notas);
