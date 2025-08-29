@@ -1,14 +1,12 @@
 import service.*;
 import model.*;
-
 import java.util.List;
-import java.math.BigDecimal;
 
 public class App {
     public static void main (String[] args) {
         List<Curso> cursos = leitura.inserirPessoas("/workspaces/sisu/javaproject/src/main/resources/dados.csv");
         estatisticas.cursos = cursos;
-        BigDecimal varia = estatisticas.deltaEspecifico(cursos.get(4));
+        Double varia = estatisticas.deltaEspecifico(cursos.get(4));
         // Não vamos utilizar o que vier abaixo, são apenas para testes
         /*
         for(Curso s : cursos) {

@@ -5,14 +5,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.util.Collections;
 
 public class estatisticas {
-    static List<BigDecimal> variacao = new ArrayList<BigDecimal>();
+    static List<Double> variacao = new ArrayList<Double>();
     public static List<Curso> cursos = new ArrayList<Curso>();
-    public static List<BigDecimal> medias() {
+    public static List<Double> medias() {
         // O último elemento do arraylist será a média geral!!!!
         List<Double> x = new ArrayList<Double>();
         for(Curso c : cursos) {
@@ -30,14 +28,14 @@ public class estatisticas {
         }
         mediaGeral = mediaGeral / x.size();
         x.add(mediaGeral);
-        List<BigDecimal> y = new ArrayList<BigDecimal>();
+        List<Double> y = new ArrayList<Double>();
         for(Double n : x) {
-            y.add((new BigDecimal(n).setScale(1, RoundingMode.HALF_EVEN)));
+            y.add(n);
         }
         return y;
     }
 
-    public static List<BigDecimal> turnos() {
+    public static List<Double> turnos() {
         String[] turnos = { "MATUTINO", "VESPERTINO", "NOTURNO", "INTEGRAL" };
 
         // Permanece na ordem acima a lista
@@ -58,11 +56,10 @@ public class estatisticas {
             totalCandidatos += qtd;
         }
 
-        List<BigDecimal> x = new ArrayList<>();
+        List<Double> x = new ArrayList<>();
         for (String t : turnos) {
             int qtd = contagem.get(t);
-            BigDecimal perc = BigDecimal.valueOf((qtd * 100.0) / totalCandidatos)
-                    .setScale(1, RoundingMode.HALF_EVEN);
+            Double perc = (qtd * 100.0) / totalCandidatos;
             x.add(perc);
         }
 
@@ -70,7 +67,7 @@ public class estatisticas {
     }
 
 
-    public static List<BigDecimal> demandas() {
+    public static List<Double> demandas() {
         String[] categorias = {
             "AC", "LB_PPI", "LB_Q", "LB_PCD", "LB_EP",
             "LI_PPI", "LI_Q", "LI_PCD", "LI_EP", "V"
@@ -93,17 +90,17 @@ public class estatisticas {
             }
         }
 
-        List<BigDecimal> x = new ArrayList<>();
+        List<Double> x = new ArrayList<>();
         for (String cat : categorias) {
             int qtd = contagem.get(cat);
-            BigDecimal perc = BigDecimal.valueOf((qtd * 100.0) / totalPessoas).setScale(1, RoundingMode.HALF_EVEN);
+            Double perc = (qtd * 100.0) / totalPessoas;
             x.add(perc);
         }
 
         return x;
     }
 
-    public static List<BigDecimal> campi() {
+    public static List<Double> campi() {
         String[] categorias = {
             "SAO CRISTOVAO", "ARACAJU", "ITABAIANA", "CAMPUS DO SERTAO"
             , "LARANJEIRAS"
@@ -126,10 +123,10 @@ public class estatisticas {
             }
         }
 
-        List<BigDecimal> x = new ArrayList<>();
+        List<Double> x = new ArrayList<>();
         for (String cat : categorias) {
             int qtd = contagem.get(cat);
-            BigDecimal perc = BigDecimal.valueOf((qtd * 100.0) / totalPessoas).setScale(1, RoundingMode.HALF_EVEN);
+            Double perc = (qtd * 100.0) / totalPessoas;
             x.add(perc);
         }
 
@@ -145,15 +142,15 @@ public class estatisticas {
         return notas;
     }
 
-    public static List<BigDecimal> delta() {
+    public static List<Double> delta() {
         for(Curso c : cursos) {
             List<Double> a = mySort(c);
-            variacao.add(BigDecimal.valueOf(a.get(a.size() - 1) - a.get(0)).setScale(1, RoundingMode.HALF_EVEN));
+            variacao.add((a.get(a.size() - 1) - a.get(0)));
         }
         return variacao;
     }
 
-    public static BigDecimal deltaEspecifico(Curso c) {
+    public static Double deltaEspecifico(Curso c) {
         delta();
         int i = 0;
         for(Curso p : cursos) {
@@ -162,6 +159,6 @@ public class estatisticas {
             }
             i++;
         }
-        return new BigDecimal(0.0);
+        return 0.0;
     }
 }
