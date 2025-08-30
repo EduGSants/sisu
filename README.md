@@ -1,8 +1,8 @@
 # Trabalho Final
 
 1. Integrantes:
--  Edu Gabriel Andrade Santos;
--  Paulo Guilherme Barbosa Ribeiro;
+  -  Edu Gabriel Andrade Santos;
+  -  Paulo Guilherme Barbosa Ribeiro;
 
 2. Link para o repositório: https://github.com/EduGSants/sisu/
 
