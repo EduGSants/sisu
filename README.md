@@ -17,4 +17,4 @@
    -  Herança: Este pilar foi um dos mais usados no trabalho, como citado anteriormente, a classe abstrata EstatisticaBase.py definiu uma interface em comum para as outras classes no padrão Estatistica. Pode-se perceber que cada uma dessas demais classes, a exemplo da classe EstatisticaCampi(EstatisticaBase), herda de EstatisticaBase;
    -  Polimorfismo: Um outro pilar importante que foi essencial no trabalho, reutilizamos muitos códigos que poderiam ser repetitivos, promovendo uma grande organização e melhora de código. Pode-se perceber o uso deste pilar por exemplo a presença do método calcular() que é polimórfico nas subclasses de EstatisticaBase, ou seja, o mesmo método possui implementações em classes distintas.
    
-  Por fim, a OO é de suma importância para diversos fatores como introduzirmos à projeto de maior escala, cooperatividade, leitura e entre outros.
+    Por fim, a OO é de suma importância para diversos fatores como introduzirmos à projeto de maior escala, cooperatividade, leitura e entre outros.
