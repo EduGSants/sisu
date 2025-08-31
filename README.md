@@ -11,12 +11,14 @@
 //----------------------------------------------------------------------------------------------------------------------------
 
 3. Descrição do tema do trabalho:
+   
 A Análise Exploratória de Dados é a etapa inicial de qualquer estudo de dados. Nela, o objetivo não é chegar a conclusões definitivas, mas entender os padrões, tendências, distribuições e relações que os dados apresentam.
 O SISU (Sistema de Seleção Unificada) é a plataforma nacional pela qual estudantes entram em universidades públicas no Brasil usando a nota do ENEM. O tema "análise exploratória dos dados do SISU da UFS" significa olhar para os dados da seleção, descobrir padrões e entendê-los melhor com interfaces gráficas em Java, que têm o papel de transformar esses dados em algo visual, interativo e acessível, facilitando a exploração para o usuário.
 
 //----------------------------------------------------------------------------------------------------------------------------
 
 4. O que conseguimos desenvolver:
+   
 O projeto, até o dado momento, lê as informações de candidatos de um arquivo .csv, calcula diversas estatísticas (como médias de notas, distribuição por campus, turno e tipo de vaga) e exibe esses dados em uma interface gráfica com textos e gráficos de pizza e linha.
 
 A classe "Leitura" tem a função de abrir o arquivo "dados.csv", um formato de texto simples, e processa cada linha, dessa forma, cada candidato se torna um objeto do tipo Pessoa, carregando seus atributos e cada curso se torna um objeto "Curso", que não só contém suas próprias informações, mas também é ligado a uma lista de todos os candidatos que se inscreveram para ele.
@@ -35,9 +37,12 @@ Ao selecionar um curso e acionar a análise, a aplicação começa. Ela exibe n�
 
 Para executar os programas, em Java é recomendado que abra o projeto na IDE de sua preferência (Deve ter suporte à JavaSwing) e execute "Inicio1.java" que está na pasta ui (Caminho: javaproject/src/main/java/ui). Já no projeto em python, execute "main.py" na IDE de sua preferência, o qual necessita ter suporte à Qt, localizado na pasta pythonproject.
 
+** OBSERVAÇÃO IMPORTANTE: Ao abrir os projetos na IDE, favor abra assim que for analisar o de Java abrir na IDE a pasta javaproject, já quando for analisar o de Python, favor abrir na IDE a pasta pythonproject. Isso se dá pois o caminho referente ao arquivo csv que contém os dados csv estão analisados de acordo com essa possibilidade, caso insira ambas as pastas de uma vez só na IDE pode dar erro.
+
 //----------------------------------------------------------------------------------------------------------------------------
 
 5. OO na segunda linguagem adotada (Python):
+   
    Para a segunda linguagem do projeto adotamos o Python, onde tem suporte de Orientação à Objetos, que utilizamos bastante para promover o reuso de métodos, melhorar a organização, segregando em classes e objetos. Podemos perceber diversos pilares da OO no código, como por exemplo:
    -  Abstração: Houve-se a representação de classes abstratas como a EstatisticaBase.py que define uma interface em comum para as demais estatísticas específicas, também tivemos as classes Curso.py e Pessoa.py que representam elementos da realidade abstraídas no código;
    -  Encapsulamento: Utilizamos atributos privados como por exemplo na classe Curso.py onde usamos bastante "__" o que indicava um atributo privado (Exemplo: self.__nome_curso = resultado[0]), e juntamente a isso métodos getters que retornavam seus respectivos valores, assim promovendo o acesso controlado;
