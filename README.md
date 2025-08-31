@@ -25,7 +25,6 @@ A classe "Leitura" tem a função de abrir o arquivo "dados.csv", um formato de 
 
 Agora que os dados estão organizados em uma estrutura de objetos coesa, entra em cena a análise estatística:
 	- A "EstatisticaMedias" se dedica a calcular a média das notas, tanto para cursos individuais quanto para o processo seletivo como um todo.
-	- A "EstatisticaDelta" investiga a competitividade, calculando a diferença entre a maior e a menor nota de cada curso. 
 	- Outras classes, como a "EstatisticaCampi" e a "EstatisticaTurnos", fazem um quadro demográfico, revelando a distribuição percentual de candidatos entre os diferentes campi e turnos.
 	- A "EstatisticaDemandas" analisa a concorrência sob a ótica das políticas de ação afirmativa, mostrando a proporção de candidatos por tipo de vaga (ampla concorrência, cotas, etc). 
 
