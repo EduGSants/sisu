@@ -2,8 +2,6 @@ from typing import List, Dict
 from model.Curso import Curso
 from service.estatistica_base import EstatisticaBase, IExtratorDados
 from service.estatistica_campi import EstatisticaCampi
-from service.estatistica_delta import EstatisticaDelta
-from service.estatistica_demandas import EstatisticaDemandas
 from service.estatistica_medias import EstatisticaMedias
 from service.estatistica_turnos import EstatisticaTurnos
 
@@ -13,9 +11,7 @@ class Estatisticas:
     estatisticas: Dict[str, EstatisticaBase] = {
         "medias": EstatisticaMedias(),
         "turnos": EstatisticaTurnos(),
-        "demandas": EstatisticaDemandas(),
-        "campi": EstatisticaCampi(),
-        "delta": EstatisticaDelta()
+        "campi": EstatisticaCampi()
     }
     
     @classmethod
@@ -37,20 +33,8 @@ class Estatisticas:
         return cls.estatisticas["turnos"].calcular()
     
     @classmethod
-    def demandas(cls) -> List[float]:
-        return cls.estatisticas["demandas"].calcular()
-    
-    @classmethod
     def campi(cls) -> List[float]:
         return cls.estatisticas["campi"].calcular()
-    
-    @classmethod
-    def delta(cls) -> List[float]:
-        return cls.estatisticas["delta"].calcular()
-    
-    @classmethod
-    def delta_especifico(cls, curso: Curso) -> float:
-        return cls.estatisticas["delta"].delta_especifico(curso)
 
     @classmethod
     def calcular_estatistica(cls, nome_estatistica: str) -> List[float]:
