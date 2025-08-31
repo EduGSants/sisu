@@ -7,6 +7,10 @@
 2. Link para o repositório: https://github.com/EduGSants/sisu/
 
 3. Descrição do tema do trabalho:
+A Análise Exploratória de Dados é a etapa inicial de qualquer estudo de dados. Nela, o objetivo não é chegar a conclusões definitivas, mas entender os padrões, tendências, distribuições e relações que os dados apresentam.
+O SISU (Sistema de Seleção Unificada) é a plataforma nacional pela qual estudantes entram em universidades públicas no Brasil usando a nota do ENEM.
+
+o tema "análise exploratória dos dados do SISU da UFS" significa olhar para os dados da seleção, descobrir padrões e entendê-los melhor com interfaces gráficas em Java, que têm o papel de transformar esses dados em algo visual, interativo e acessível, facilitando a exploração para o usuário.
 
 4. O que conseguimos desenvolver:
 
