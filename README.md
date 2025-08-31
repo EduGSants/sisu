@@ -12,9 +12,7 @@
 
 3. Descrição do tema do trabalho:
 A Análise Exploratória de Dados é a etapa inicial de qualquer estudo de dados. Nela, o objetivo não é chegar a conclusões definitivas, mas entender os padrões, tendências, distribuições e relações que os dados apresentam.
-O SISU (Sistema de Seleção Unificada) é a plataforma nacional pela qual estudantes entram em universidades públicas no Brasil usando a nota do ENEM.
-
-o tema "análise exploratória dos dados do SISU da UFS" significa olhar para os dados da seleção, descobrir padrões e entendê-los melhor com interfaces gráficas em Java, que têm o papel de transformar esses dados em algo visual, interativo e acessível, facilitando a exploração para o usuário.
+O SISU (Sistema de Seleção Unificada) é a plataforma nacional pela qual estudantes entram em universidades públicas no Brasil usando a nota do ENEM. O tema "análise exploratória dos dados do SISU da UFS" significa olhar para os dados da seleção, descobrir padrões e entendê-los melhor com interfaces gráficas em Java, que têm o papel de transformar esses dados em algo visual, interativo e acessível, facilitando a exploração para o usuário.
 
 //----------------------------------------------------------------------------------------------------------------------------
 
@@ -35,7 +33,7 @@ O sistema materializa os dados processados através de uma interface gráfica co
 
 Ao selecionar um curso e acionar a análise, a aplicação começa. Ela exibe números, mas também os traduz em representações visuais. Um "GraficoPizza" é desenhado para mostrar, de forma intuitiva, a proporção de candidatos por tipo de vaga naquele curso, onde cada "fatia" colorida representa uma cota. Simultaneamente, um "GraficoLinha" traça a distribuição das notas dos candidatos daquele curso, permitindo uma visualização clara da performance geral dos concorrentes.
 
-OBS: Para executar o programa, é recomendado que abra o projeto no netbeans e execute "Inicio1.java" que está na pasta ui.
+Para executar os programas, em Java é recomendado que abra o projeto na IDE de sua preferência (Deve ter suporte à JavaSwing) e execute "Inicio1.java" que está na pasta ui (Caminho: javaproject/src/main/java/ui). Já no projeto em python, execute "main.py" na IDE de sua preferência, o qual necessita ter suporte à Qt, localizado na pasta pythonproject.
 
 //----------------------------------------------------------------------------------------------------------------------------
 
