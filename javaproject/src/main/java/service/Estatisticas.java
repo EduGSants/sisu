@@ -13,9 +13,7 @@ public class Estatisticas {
     static {
         estatisticas.put("medias", new EstatisticaMedias());
         estatisticas.put("turnos", new EstatisticaTurnos());
-        estatisticas.put("demandas", new EstatisticaDemandas());
         estatisticas.put("campi", new EstatisticaCampi());
-        estatisticas.put("delta", new EstatisticaDelta());
 
         EstatisticaBase.setCursos(cursos);
     }
@@ -47,11 +45,6 @@ public class Estatisticas {
     
     public static List<Double> delta() {
         return estatisticas.get("delta").calcular();
-    }
-    
-    public static Double deltaEspecifico(Curso curso) {
-        EstatisticaDelta estatisticaDelta = (EstatisticaDelta) estatisticas.get("delta");
-        return estatisticaDelta.deltaEspecifico(curso);
     }
 
     public static List<Double> calcularEstatistica(String nomeEstatistica) {
